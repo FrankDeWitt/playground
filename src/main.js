@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import router from "./router/index"
+import store from "./store"
 import App from './App.vue'
 import './index.css'
 
@@ -15,6 +16,7 @@ router.afterEach((to, from) => {
 
 
 export const app = createApp(App)
+  .use(store)
   .use(router);
 
 router.isReady().then(() => app.mount('#app'));
